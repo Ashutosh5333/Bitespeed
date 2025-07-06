@@ -93,12 +93,13 @@ export default function MainBuilder() {
     );
 
     if (unconnectedNodes.length > 0) {
-      setError("❌ Cannot save: Some nodes are unconnected.");
+      setError("❌ Cannot save.");
       // alert("Cannot save Flow: nodes are unconnected.");
       return;
     }
     else{
       setError("");
+    localStorage.setItem(FLOW_KEY, JSON.stringify({ nodes, edges }));
       alert("Flow Saved!")
     }
     setError("");
@@ -112,9 +113,9 @@ export default function MainBuilder() {
     <div className="flex h-screen font-sans">
       {/* Flow Canvas */}
 
-      <div className="flex-1 bg-gray-100">
+      <div className="flex-1 bg-gray-100 py-1" >
         {textError && (
-          <div className="text-center text-red-600 font-medium py-1">
+          <div className="text-center bg-red-200 rounded w-64 m-auto text-red-600 font-medium py-1">
             {textError}
           </div>
         )}

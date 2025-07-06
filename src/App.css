@@ -1,0 +1,10 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  /* font-weight: 100; */
+  /* font-style: normal; */
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; 
+}
